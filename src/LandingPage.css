@@ -1,0 +1,88 @@
+.landing-page {
+    background-color: #f7f7f7;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.light-theme {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #f7f7f7;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header nav {
+    display: flex;
+}
+
+.header nav a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.toggle-theme {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #333;
+    color: #f7f7f7;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form label span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
