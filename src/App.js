@@ -27,6 +27,10 @@ function App() {
   });
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = 'User(s) Albums';
+  }, []);
+
   useEffect(
     () => {
       if (user) {

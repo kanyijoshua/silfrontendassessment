@@ -23,6 +23,7 @@ const Albums = () => {
                 setLoading(false);
             });
     }, []);
+    
 
     const handleClose = () => setShowModal(false);
     const handleShow = (album) => {
