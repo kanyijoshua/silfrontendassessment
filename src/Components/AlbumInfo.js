@@ -30,6 +30,7 @@ function AlbumInfo({ match }) {
     setAlbum({ ...album, photo }); 
     setShowAlert(true);
     setTimeout(() => setShowAlert(false), 3000);
+    setPhoto(`https://picsum.photos/300/300?album=${event.target.value}`);
   };
 
   return (
@@ -45,7 +46,7 @@ function AlbumInfo({ match }) {
           <h5 className="card-title">{album.title}</h5>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="photo">Photo Url</label>
+              <label htmlFor="photo">Photo Id</label>
               <input
                 type="number"
                 required

@@ -27,7 +27,7 @@ function UserInfo({ match }) {
     }, [userId])
 
     return (
-        <div className="card" style={{ width: "20rem" }}>
+        <div className="card" style={{ width: "90rem", textAlign:"center" }}>
             <div className="card-body">
                 <h5 className="card-title">{user.name}</h5>
                 <p>
@@ -52,7 +52,7 @@ function UserInfo({ match }) {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
+                            <th>Album Title</th>
                         </tr>
                     </thead>
                     <tbody>

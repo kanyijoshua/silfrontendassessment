@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col, Spinner, Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Albums = () => {
     const [albums, setAlbums] = useState([]);
@@ -54,6 +55,7 @@ const Albums = () => {
                                             className="img-fluid"
                                         />
                                         <h5 className="card-title">{album.title}</h5>
+                                        <Link className="btn btn-info" to={"/AlbumInfo/" + album.id}>Album Details</Link>
                                         <Button onClick={() => handleShow(album)}>
                                             Full Photo Album  
                                         </Button>

@@ -47,7 +47,7 @@ function Users() {
                 <p>Loading...</p>
             ) : (
                 <>
-                    <table className="table">
+                    <table className="table table-bordered table-striped">
                         <thead className="thead-light">
                             <tr>
                                 <th>ID</th>
