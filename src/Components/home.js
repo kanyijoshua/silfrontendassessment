@@ -11,6 +11,9 @@ function Home() {
                         <p className="lead">
                             This site showcases a collection of albums from various users.
                         </p>
+                        <p>
+                            To view users album(s), click the sign in with google.
+                        </p>
                         <hr className="my-4" />
                         <p>
                             Check out the collection to find your favorite albums.
