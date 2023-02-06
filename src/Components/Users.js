@@ -78,7 +78,7 @@ function Users() {
                                                 View {user.name} Details
                                             </Button> */}
                                                 <Link to={"/User/" + user.id}>
-                                                    View Details
+                                                    View user details
                                                 </Link>
                                             </td>
                                         </tr>
