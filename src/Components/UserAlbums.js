@@ -63,8 +63,8 @@ const UserAlbumList = () => {
                                                 alt={selectedAlbum.title}
                                                 className="img-fluid"
                                             />
-                                            <Link to={"/AlbumInfo/" + album.id}>Album Details</Link>
                                             <h5 className="card-title">{album.title}</h5>
+                                            <Link className="btn btn-info" to={"/AlbumInfo/" + album.id}>Album Details</Link>
                                             <Button onClick={() => handleShow(album)}>
                                                 Full Photo Album
                                             </Button>

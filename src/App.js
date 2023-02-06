@@ -40,7 +40,7 @@ function App() {
             setProfile(res.data);
             sessionStorage.setItem("profile", JSON.stringify(res.data));
             console.log(res.data);
-            navigate('/Users');
+            navigate('/Users')
           })
           .catch((err) => console.log(err));
       }
