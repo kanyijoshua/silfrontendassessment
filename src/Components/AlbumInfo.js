@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Footer from "./Footer";
 
 function AlbumInfo({ match }) {
   const [album, setAlbum] = useState({});
@@ -34,35 +35,39 @@ function AlbumInfo({ match }) {
   };
 
   return (
-    <div>
-      {showAlert && (
-        <div className="alert alert-success" role="alert">
-          The album photo has been updated successfully!
-        </div>
-      )}
-      <div className="card" style={{ width: "38rem" }}>
-        <img src={photo} className="card-img-top" alt="album cover" />
-        <div className="card-body">
-          <h5 className="card-title">{album.title}</h5>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="photo">Photo Id</label>
-              <input
-                type="number"
-                required
-                className="form-control"
-                id="photo"
-                value={album.albumId}
-                onChange={handleChange}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
+    <>
+      <div>
+        {showAlert && (
+          <div className="alert alert-success" role="alert">
+            The album photo has been updated successfully!
+          </div>
+        )}
+        <div className="card" style={{ width: "38rem" }}>
+          <img src={photo} className="card-img-top" alt="album cover" />
+          <div className="card-body">
+            <h5 className="card-title">{album.title}</h5>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="photo">Photo Id</label>
+                <input
+                  type="number"
+                  required
+                  className="form-control"
+                  id="photo"
+                  value={album.albumId}
+                  onChange={handleChange}
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
+    
     
   );
 }

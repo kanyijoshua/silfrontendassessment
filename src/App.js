@@ -13,6 +13,7 @@ import AlbumInfo from './Components/AlbumInfo';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import ProtectedRoutes from './Components/ProtectedRoutes';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light dark-theme bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link to="/" className="navbar-brand">User(s) Albums</Link>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
@@ -86,6 +87,7 @@ function App() {
           </ul>
         </div>
       </nav>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginWithGoogle />} />

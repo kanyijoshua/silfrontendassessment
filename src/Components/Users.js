@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 import axios from "axios";
+import Footer from "./Footer";
 
 
 function Users() {
@@ -42,82 +43,85 @@ function Users() {
     };
 
     return (
-        <div>
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <>
-                    <table className="table table-bordered table-striped">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Username</th>
-                                <th>Albums</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {users.map(user => {
-                                let UserAlbums = albums.filter(album => album.userId == user.id).length;
-                                return (
-                                    <tr key={user.id}>
-                                        <td>{user.id}</td>
-                                        <td>{user.name}</td>
-                                        <td>{user.username}</td>
-                                        <td>
-                                            <p>{UserAlbums} Album(s)</p>
-                                            <Link to={"/UserAlbums/" + user.id}>
-                                                View Albums
-                                            </Link>
-                                        </td>
-                                        <td>
-                                            {/* <Button variant="primary" onClick={() => handleShow(user)}>
+        <>
+            <div>
+                {loading ? (
+                    <p>Loading...</p>
+                ) : (
+                    <>
+                        <table className="table table-bordered table-striped">
+                            <thead className="thead-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Albums</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {users.map(user => {
+                                    let UserAlbums = albums.filter(album => album.userId == user.id).length;
+                                    return (
+                                        <tr key={user.id}>
+                                            <td>{user.id}</td>
+                                            <td>{user.name}</td>
+                                            <td>{user.username}</td>
+                                            <td>
+                                                <p>{UserAlbums} Album(s)</p>
+                                                <Link to={"/UserAlbums/" + user.id}>
+                                                    View Albums
+                                                </Link>
+                                            </td>
+                                            <td>
+                                                {/* <Button variant="primary" onClick={() => handleShow(user)}>
                                                 View {user.name} Details
                                             </Button> */}
-                                            <Link to={"/User/" + user.id}>
-                                                View Details
-                                            </Link>
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
+                                                <Link to={"/User/" + user.id}>
+                                                    View Details
+                                                </Link>
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
 
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>{selectedUser.name} Details</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <p>
-                                <strong>Name:</strong> {selectedUser.name}
-                            </p>
-                            <p>
-                                <strong>Username:</strong> {selectedUser.username}
-                            </p>
-                            <p>
-                                <strong>Email:</strong> {selectedUser.email}
-                            </p>
-                            <p>
-                                <strong>website:</strong>{selectedUser.website}
-                            </p>
-                            <p>
-                                <strong>Address:</strong> {/* {selectedUser.address.street}, {selectedUser.address.zipCode}, {selectedUser.address.city} */}
-                            </p>
-                            <p>
-                                <strong>Company:</strong> {/* {selectedUser.company.name}, {selectedUser.company.catchPhrase}, {selectedUser.company.bs} */}
-                            </p>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={handleClose}>
-                                Close
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
-                </>
-            )};
-        </div>
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>{selectedUser.name} Details</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <p>
+                                    <strong>Name:</strong> {selectedUser.name}
+                                </p>
+                                <p>
+                                    <strong>Username:</strong> {selectedUser.username}
+                                </p>
+                                <p>
+                                    <strong>Email:</strong> {selectedUser.email}
+                                </p>
+                                <p>
+                                    <strong>website:</strong>{selectedUser.website}
+                                </p>
+                                <p>
+                                    <strong>Address:</strong> {/* {selectedUser.address.street}, {selectedUser.address.zipCode}, {selectedUser.address.city} */}
+                                </p>
+                                <p>
+                                    <strong>Company:</strong> {/* {selectedUser.company.name}, {selectedUser.company.catchPhrase}, {selectedUser.company.bs} */}
+                                </p>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </>
+                )};
+            </div>
+            <Footer/>
+        </>
     );
 }
 

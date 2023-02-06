@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ListGroup, Container, Row, Col, Spinner, Button, Modal } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import Footer from "./Footer";
 
 const UserAlbumList = () => {
     const [albums, setAlbums] = useState([]);
@@ -97,6 +98,7 @@ const UserAlbumList = () => {
                     </Modal.Body>
                 </Modal>
             </Container>
+            <Footer/>
         </>
         
     );
